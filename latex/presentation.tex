@@ -6,12 +6,6 @@
 % https://github.com/AlexZabashta/ITMO-Beamer-theme
 % --------------------------------------------------------------------------
 
-% Attention!!!
-% This document was created only as an example of using ITMO beamer styling.
-% Don't use it as a Latex or beamer tutorial!
-% Check out the capabilities of Latex and beamer (at least basic) independently.
-
-
 \documentclass[aspectratio=169]{beamer}
 \usepackage{ITMOtheme}
 
@@ -47,7 +41,7 @@
 % \titlepage - command for automatic generation of title slide content.
 
 \begin{frame}[plain]
-    \titlepage
+  \titlepage
 \end{frame}
 
 % You can use custom title, if you want.
@@ -58,7 +52,7 @@
 %     \vfill
 %         \includegraphics[width=0.2\textwidth]{itmo/logo_basic_english_white.pdf}
 %     \vfill
-%         \usebeamerfont{title}{  \inserttitle\par} 
+%         \usebeamerfont{title}{  \inserttitle\par}
 %     \vfill
 %         Custom title slide
 %     \vfill
@@ -73,144 +67,157 @@
 
 \AtBeginSection[]
 {
-    \begin{frame}[plain]
-        \frametitle{Outline}
-        \Large
-        \tableofcontents[currentsection]
-    \end{frame}
+  \begin{frame}[plain]
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
 }
-
 
 \begin{frame}{Footcite and Footnote}
 
-Example of footnote \footnote{For example, it can be used for citation}.
+  Example of footnote \footnote{For example, it can be used for citation}.
 
 \end{frame}
 
+\section{Introduction to Bioinformatics}
 
-\section{First Section}
-
-\subsection{Subsection Example} 
+\subsection{Proteins, Amino Acids, and Protein Structures}
 
 \begin{frame}
-\frametitle{Paragraphs of Text}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\alert{This text does not make any sense!}
+  \frametitle{TODO}
+  \alert{TODO}
 
 \end{frame}
 
-
-\section{Second Section} 
-
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Regular Block}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{exampleblock}{Example Block}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{exampleblock}
-
-\begin{alertblock}{Alert Block}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{alertblock}
-\end{frame}
-
+\subsection{Binding Sites}
 
 \begin{frame}
-\frametitle{Colors}
-
-You can use main official predefined colors 
-\textcolor{ITMOblue}{ITMOblue} and \textcolor{ITMOred}{ITMOred}, and also
- \textcolor{ITMOorange}{ITMOorange}, \textcolor{ITMOyellow}{ITMOyellow},  \textcolor{ITMOgreen}{ITMOgreen}, \textcolor{ITMOcapri}{ITMOcapri}, \textcolor{ITMOviolet}{ITMOviolet}, \textcolor{ITMOpink}{ITMOpink}.
+  \frametitle{TODO}
+  TODO
 
 \end{frame}
 
-
-\subsection{Using columns}
-
+\subsection{Cryptic Binding Sites, CryptoBench}
 
 \begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] 
+  \frametitle{TODO}
+  TODO
 
-\column{.45\textwidth}{
-    \begin{enumerate}
+\end{frame}
+
+\section{Methodology}
+
+\subsection{Goal}
+
+\begin{frame}
+  \frametitle{TODO}
+  \begin{block}{Regular Block}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+  \end{block}
+
+  \begin{exampleblock}{Example Block}
+    Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
+  \end{exampleblock}
+
+  \begin{alertblock}{Alert Block}
+    Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
+  \end{alertblock}
+\end{frame}
+
+\subsection{Pipeline}
+
+\begin{frame}
+  \frametitle{TODO}
+
+  You can use main official predefined colors
+  \textcolor{ITMOblue}{ITMOblue} and \textcolor{ITMOred}{ITMOred}, and also
+  \textcolor{ITMOorange}{ITMOorange}, \textcolor{ITMOyellow}{ITMOyellow},  \textcolor{ITMOgreen}{ITMOgreen}, \textcolor{ITMOcapri}{ITMOcapri}, \textcolor{ITMOviolet}{ITMOviolet}, \textcolor{ITMOpink}{ITMOpink}.
+
+\end{frame}
+
+\subsection{Evaluation}
+
+\begin{frame}
+  \frametitle{TODO}
+  \begin{columns}[c]
+
+    \column{.45\textwidth}{
+      \begin{enumerate}
         \item First item
         \item Second item
         \item Third item
-    \end{enumerate}
-}
+      \end{enumerate}
+    }
 
-\column{.45\textwidth}{
-    \begin{itemize}
+    \column{.45\textwidth}{
+      \begin{itemize}
         \item Some item
         \item Another item
         \item Also item
-    \end{itemize}
-}
+      \end{itemize}
+    }
 
-\end{columns}
+  \end{columns}
 \end{frame}
 
+\section{Software}
 
-\section{Other LaTex stuff}
-
-\subsection{Tables}
-
+\subsection{Architecture}
 
 \begin{frame}
-\frametitle{Table}
-\begin{table}[H] 
-% Russian style caption
-%\caption{Multiplication table of complex numbers}
-\begin{tabular}{r | r r r r r} 
-$a \times b$ & $0$ &  $1$ &  $i$ & $-1$ & $-i$ \\ \hline
-         $0$ & $0$ &  $0$ &  $0$ &  $0$ &  $0$ \\
-         $1$ & $0$ &  $1$ &  $i$ & $-1$ & $-i$ \\
-         $i$ & $0$ &  $i$ &  $-1$ & $-i$ &  $1$ \\
-        $-1$ & $0$ & $-1$ &  $-i$ &  $1$ &  $i$ \\
-        $-i$ & $0$ & $-i$ &  $1$ &  $i$ & $-1$ \\
-\end{tabular}
-\caption{Multiplication table of complex numbers}
-\end{table}
+  \frametitle{TODO}
+  \begin{table}[H]
+    % Russian style caption
+    %\caption{Multiplication table of complex numbers}
+    \begin{tabular}{r | r r r r r}
+      $a \times b$ & $0$ &  $1$ &  $i$ & $-1$ & $-i$ \\ \hline
+      $0$ & $0$ &  $0$ &  $0$ &  $0$ &  $0$ \\
+      $1$ & $0$ &  $1$ &  $i$ & $-1$ & $-i$ \\
+      $i$ & $0$ &  $i$ &  $-1$ & $-i$ &  $1$ \\
+      $-1$ & $0$ & $-1$ &  $-i$ &  $1$ &  $i$ \\
+      $-i$ & $0$ & $-i$ &  $1$ &  $i$ & $-1$ \\
+    \end{tabular}
+    \caption{Multiplication table of complex numbers}
+  \end{table}
 \end{frame}
 
-
-\subsection{Theorems and Equations}
-
+\subsection{Technology Stack}
 
 \begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Fermat's Last Theorem]
-\begin{equation}
-    \forall n, x, y, z \in \mathbb{N}: \mathbf{n > 2} \Rightarrow x^n + y^n \neq z^n
-\end{equation}
-\end{theorem}
-I have discovered a truly remarkable proof of this theorem which this frame is too small to contain.
+  \frametitle{TODO}
+  \begin{theorem}[Fermat's Last Theorem]
+    \begin{equation}
+      \forall n, x, y, z \in \mathbb{N}: \mathbf{n > 2} \Rightarrow x^n + y^n \neq z^n
+    \end{equation}
+  \end{theorem}
+  I have discovered a truly remarkable proof of this theorem which this frame is too small to contain.
 \end{frame}
 
-
-\subsection{Figures}
+\subsection{Deployment}
 
 \begin{frame}
-\frametitle{Figure example}
-\begin{figure}
+  \frametitle{TODO}
+  \begin{figure}
     \includegraphics[scale=.3]{fig/parabola.png}
     \caption{Parabola with focus and directrix}
-\end{figure}
+  \end{figure}
 \end{frame}
 
+\subsection{Screenshots}
+
+\begin{frame}
+  \frametitle{TODO}
+
+  TODO
+
+\end{frame}
 
 \begin{frame}[plain]
-    \itmobackgroundsnakes{
-        \vfill
-        \Huge{The End}
-        \vfill
-    }
+  \itmobackgroundsnakes{
+    \vfill
+    \Huge{The End}
+    \vfill
+  }
 \end{frame}
-
 
 \end{document}
