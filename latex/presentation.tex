@@ -73,91 +73,114 @@
   \end{frame}
 }
 
-\begin{frame}{Footcite and Footnote}
+% \begin{frame}{Footcite and Footnote}
 
-  Example of footnote \footnote{For example, it can be used for citation}.
+%   Example of footnote \footnote{For example, it can be used for citation}.
 
-\end{frame}
+% \end{frame}
 
 \section{Introduction to Bioinformatics}
 
 \subsection{Proteins, Amino Acids, and Protein Structures}
 
 \begin{frame}
-  \frametitle{TODO}
-  \alert{TODO}
+  \frametitle{Proteins, Amino Acids, and Protein Structures}
+
+  \begin{itemize}
+    \item Proteins: essential biomolecules, diverse functions
+    \item Composed of amino acid (residue) chains
+    \item Primary structure: amino acid sequence
+    \item Tertiary structure: 3D folding, functional form
+  \end{itemize}
 
 \end{frame}
 
 \subsection{Binding Sites}
 
 \begin{frame}
-  \frametitle{TODO}
-  TODO
+  \frametitle{Binding Sites}
+  
+  \begin{itemize}
+    \item Binding sites: regions on proteins where ligands (e.g., substrates, inhibitors) bind
+    \item Cryptic binding sites: hidden or transient sites, not apparent in static structures
+    \item Apo/Holo conformations: different states of a protein (apo: unbound, holo: bound)
+  \end{itemize}
+  
+  \begin{itemize}
+    \item Crucial for protein function, regulation, and interaction with other molecules
+    \item Essential for drug design and discovery
+  \end{itemize}
 
 \end{frame}
 
-\subsection{Cryptic Binding Sites, CryptoBench}
+\subsection{CryptoBench}
 
 \begin{frame}
-  \frametitle{TODO}
-  TODO
+  \frametitle{CryptoBench}
+  \begin{itemize}
+    \item A benchmark dataset developed at FMP CUNI for evaluating cryptic binding site prediction methods
+    \item Provides a diverse set of protein structures
+    \item Includes a model for predicting individual cryptic binding residues (not sites)
+  \end{itemize}
 
 \end{frame}
 
 \section{Methodology}
-
-\subsection{Goal}
+\subsection{Goals}
 
 \begin{frame}
-  \frametitle{TODO}
-  \begin{block}{Regular Block}
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+  \frametitle{Goals}
+  \begin{block}{Clustering}
+    Cluster residue-level cryptic predictions (CryptoBench) into contiguous cryptic binding sites.
   \end{block}
 
-  \begin{exampleblock}{Example Block}
-    Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-  \end{exampleblock}
-
-  \begin{alertblock}{Alert Block}
-    Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-  \end{alertblock}
+  \begin{block}{Software (CryptoShow)}
+    Build a client–server web app to submit structures, run residue predictions, cluster them into sites, and visualize results with animations and AHoJ\footnote{AHoJ is a tool developed at FMP CUNI for finding apo-holo protein pair analogs.}-based analogs.
+  \end{block}
 \end{frame}
 
 \subsection{Pipeline}
 
 \begin{frame}
-  \frametitle{TODO}
+  \frametitle{Pipeline}
 
-  You can use main official predefined colors
-  \textcolor{ITMOblue}{ITMOblue} and \textcolor{ITMOred}{ITMOred}, and also
-  \textcolor{ITMOorange}{ITMOorange}, \textcolor{ITMOyellow}{ITMOyellow},  \textcolor{ITMOgreen}{ITMOgreen}, \textcolor{ITMOcapri}{ITMOcapri}, \textcolor{ITMOviolet}{ITMOviolet}, \textcolor{ITMOpink}{ITMOpink}.
+  \begin{figure}
+    \includegraphics[width=\textwidth]{fig/pipeline.png}
+  \end{figure}
 
 \end{frame}
 
 \subsection{Evaluation}
 
 \begin{frame}
-  \frametitle{TODO}
-  \begin{columns}[c]
+  \frametitle{Evaluation}
 
-    \column{.45\textwidth}{
-      \begin{enumerate}
-        \item First item
-        \item Second item
-        \item Third item
-      \end{enumerate}
-    }
+  "Simple" clustering is not enough\dots
 
-    \column{.45\textwidth}{
-      \begin{itemize}
-        \item Some item
-        \item Another item
-        \item Also item
-      \end{itemize}
-    }
+  \begin{figure}
+    \includegraphics[width=\textwidth]{fig/non-smoothened-1.pdf}
+  \end{figure}
+\end{frame}
 
-  \end{columns}
+\begin{frame}
+  \frametitle{Evaluation}
+
+  Let's train another model!
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{fig/smoothing-difference.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Evaluation}
+
+  \dots and it seems like the new model works!
+
+  \begin{figure}
+    \includegraphics[width=\textwidth]{fig/smoothened-1.pdf}
+  \end{figure}
 \end{frame}
 
 \section{Software}
@@ -165,50 +188,68 @@
 \subsection{Architecture}
 
 \begin{frame}
-  \frametitle{TODO}
-  \begin{table}[H]
-    % Russian style caption
-    %\caption{Multiplication table of complex numbers}
-    \begin{tabular}{r | r r r r r}
-      $a \times b$ & $0$ &  $1$ &  $i$ & $-1$ & $-i$ \\ \hline
-      $0$ & $0$ &  $0$ &  $0$ &  $0$ &  $0$ \\
-      $1$ & $0$ &  $1$ &  $i$ & $-1$ & $-i$ \\
-      $i$ & $0$ &  $i$ &  $-1$ & $-i$ &  $1$ \\
-      $-1$ & $0$ & $-1$ &  $-i$ &  $1$ &  $i$ \\
-      $-i$ & $0$ & $-i$ &  $1$ &  $i$ & $-1$ \\
-    \end{tabular}
-    \caption{Multiplication table of complex numbers}
-  \end{table}
+  \frametitle{Architecture}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{fig/architecture.png}
+  \end{figure}
 \end{frame}
 
 \subsection{Technology Stack}
 
 \begin{frame}
-  \frametitle{TODO}
-  \begin{theorem}[Fermat's Last Theorem]
-    \begin{equation}
-      \forall n, x, y, z \in \mathbb{N}: \mathbf{n > 2} \Rightarrow x^n + y^n \neq z^n
-    \end{equation}
-  \end{theorem}
-  I have discovered a truly remarkable proof of this theorem which this frame is too small to contain.
+  \frametitle{Technology Stack}
+
+  \begin{itemize}
+    \item \textbf{backend, worker-cpu / worker-gpu} - Python, notable libraries and tools: Celery (asynchronous tasks in Python), FastAPI, Flower, PyTorch, BioPython, Biotite, Scikit-Learn, MDAnalysis, Gemmi, Redis, uv
+    \item \textbf{frontend} - TypeScript, notable libraries, tools, and frameworks: React, NginX, Mol*, Bun, Vite
+  \end{itemize}
+
 \end{frame}
 
 \subsection{Deployment}
 
 \begin{frame}
-  \frametitle{TODO}
-  \begin{figure}
-    \includegraphics[scale=.3]{fig/parabola.png}
-    \caption{Parabola with focus and directrix}
-  \end{figure}
+  \frametitle{Deployment}
+
+  \begin{itemize}
+    \item Docker for easy deployment and portability, orchestrated with Docker Compose
+    \item GitHub Actions for automated deployment
+  \end{itemize}
+
 \end{frame}
 
 \subsection{Screenshots}
 
 \begin{frame}
-  \frametitle{TODO}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{fig/screen1.png}
+  \end{figure}
 
-  TODO
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{fig/screen2.png}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{fig/screen3.png}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{fig/screen4.png}
+  \end{figure}
 
 \end{frame}
 
