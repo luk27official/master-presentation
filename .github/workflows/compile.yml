@@ -22,4 +22,4 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                   name: PDF
-                  path: presentation.pdf
+                  path: latex/presentation.pdf
