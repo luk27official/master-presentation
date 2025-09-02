@@ -87,10 +87,10 @@
   \frametitle{Proteins, Amino Acids, and Protein Structures}
 
   \begin{itemize}
-    \item Proteins: essential biomolecules, diverse functions
-    \item Composed of amino acid (residue) chains
-    \item Primary structure: amino acid sequence
-    \item Tertiary structure: 3D folding, functional form
+    \item \textbf{Proteins}: essential biomolecules, diverse functions
+    \item Composed of \textbf{amino acid (residue)} chains
+    \item \textbf{Primary structure}: amino acid sequence
+    \item \textbf{Tertiary structure}: 3D folding, functional form
   \end{itemize}
 
 \end{frame}
@@ -99,16 +99,16 @@
 
 \begin{frame}
   \frametitle{Binding Sites}
-  
+
   \begin{itemize}
-    \item Binding sites: regions on proteins where ligands (e.g., substrates, inhibitors) bind
-    \item Cryptic binding sites: hidden or transient sites, not apparent in static structures
-    \item Apo/Holo conformations: different states of a protein (apo: unbound, holo: bound)
+    \item \textbf{Binding sites}: regions on proteins where ligands (e.g., substrates, inhibitors) bind
+    \item \textbf{Cryptic binding sites}: hidden or transient sites, not apparent in static structures
+    \item \textbf{Apo/Holo conformations}: different states of a protein (apo: unbound, holo: bound)
   \end{itemize}
-  
+
   \begin{itemize}
-    \item Crucial for protein function, regulation, and interaction with other molecules
-    \item Essential for drug design and discovery
+    \item Crucial for \textbf{protein function}, regulation, and interaction with other molecules
+    \item Essential for \textbf{drug design} and discovery
   \end{itemize}
 
 \end{frame}
@@ -116,44 +116,67 @@
 \subsection{CryptoBench}
 
 \begin{frame}
-  \frametitle{CryptoBench}
+  \frametitle{Cryptic Binding Residues Prediction: CryptoBench}
   \begin{itemize}
     \item A benchmark dataset developed at FMP CUNI for evaluating cryptic binding site prediction methods
     \item Provides a diverse set of protein structures
-    \item Includes a model for predicting individual cryptic binding residues (not sites)
+    \item Includes a model for predicting individual cryptic binding \textbf{residues} (not sites)
   \end{itemize}
 
 \end{frame}
 
 \section{Methodology}
-\subsection{Goals}
+\subsection{Objectives}
 
 \begin{frame}
-  \frametitle{Goals}
+  \frametitle{Objectives}
   \begin{block}{Clustering}
-    Cluster residue-level cryptic predictions (CryptoBench) into contiguous cryptic binding sites.
+    Cluster \textbf{residue-level} cryptic predictions (CryptoBench) into contiguous \textbf{cryptic binding sites}.
   \end{block}
 
   \begin{block}{Software (CryptoShow)}
-    Build a client–server web app to submit structures, run residue predictions, cluster them into sites, and visualize results with animations and AHoJ\footnote{AHoJ is a tool developed at FMP CUNI for finding apo-holo protein pair analogs.}-based analogs.
+    Build a client–server web app to submit structures, run residue predictions, cluster them into sites, and visualize results. Additionally, provide animations using AHoJ\footnote{AHoJ is a tool developed at FMP CUNI for finding apo-holo protein pair analogs.}, an external database for protein conformational analysis.
   \end{block}
 \end{frame}
 
 \subsection{Pipeline}
 
 \begin{frame}
-  \frametitle{Pipeline}
+  \frametitle{Data Processing Pipeline}
 
   \begin{figure}
     \includegraphics[width=\textwidth]{fig/pipeline.png}
+    \caption{Data processing pipeline. \textcolor{ITMOdarkgreen}{Green arrows} indicate newly introduced techniques.}
   \end{figure}
+
+\end{frame}
+
+\subsection{Clustering}
+
+\begin{frame}
+  \frametitle{Clustering}
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \textbf{Approach 1}
+      \begin{itemize}
+        \item TODO
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{Approach 2}
+      \begin{itemize}
+        \item TODO
+      \end{itemize}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 \subsection{Evaluation}
 
 \begin{frame}
-  \frametitle{Evaluation}
+  \frametitle{Evaluation on the CryptoBench dataset: Approach 1}
 
   "Simple" clustering is not enough\dots
 
@@ -163,7 +186,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Evaluation}
+  \frametitle{Approach 2: Smoothing Model Training}
 
   Let's train another model!
 
@@ -174,7 +197,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Evaluation}
+  \frametitle{Evaluation on the CryptoBench dataset: Approach 2}
 
   \dots and it seems like the new model works!
 
@@ -201,20 +224,9 @@
   \frametitle{Technology Stack}
 
   \begin{itemize}
-    \item \textbf{backend, worker-cpu / worker-gpu} - Python, notable libraries and tools: Celery (asynchronous tasks in Python), FastAPI, Flower, PyTorch, BioPython, Biotite, Scikit-Learn, MDAnalysis, Gemmi, Redis, uv
-    \item \textbf{frontend} - TypeScript, notable libraries, tools, and frameworks: React, NginX, Mol*, Bun, Vite
-  \end{itemize}
-
-\end{frame}
-
-\subsection{Deployment}
-
-\begin{frame}
-  \frametitle{Deployment}
-
-  \begin{itemize}
-    \item Docker for easy deployment and portability, orchestrated with Docker Compose
-    \item GitHub Actions for automated deployment
+    \item \textbf{Backend}: Python, notable libraries and tools: Celery (asynchronous tasks in Python), FastAPI, Flower, PyTorch, BioPython, Biotite, Scikit-Learn, MDAnalysis, Gemmi, Redis, uv
+    \item \textbf{Frontend}: TypeScript, notable libraries, tools, and frameworks: React, NginX, Mol*, Bun, Vite
+    \item \textbf{DevOps}: Docker (Docker Compose), GitHub Actions
   \end{itemize}
 
 \end{frame}

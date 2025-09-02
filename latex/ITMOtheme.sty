@@ -21,18 +21,17 @@
 %\setsansfont{Arial}
 %\setsansfont{Calibri.ttf}
 
-
-
-\definecolor{ITMOwhite}{RGB}{255,255,255} 
-\definecolor{ITMOblack}{RGB}{0,0,0} 
+\definecolor{ITMOwhite}{RGB}{255,255,255}
+\definecolor{ITMOblack}{RGB}{0,0,0}
 
 \definecolor{ITMOred}{RGB}{249,63,65}
 \definecolor{ITMOorange}{RGB}{254,204,53}
-\definecolor{ITMOyellow}{RGB}{255,255,0} 
-\definecolor{ITMOgreen}{RGB}{191,255,0} 
+\definecolor{ITMOyellow}{RGB}{255,255,0}
+\definecolor{ITMOgreen}{RGB}{191,255,0}
+\definecolor{ITMOdarkgreen}{RGB}{0,128,0}
 \definecolor{ITMOcapri}{RGB}{0,204,255}
-\definecolor{ITMOblue}{RGB}{0,105,255} 
-\definecolor{ITMOviolet}{RGB}{126,16,255} 
+\definecolor{ITMOblue}{RGB}{0,105,255}
+\definecolor{ITMOviolet}{RGB}{126,16,255}
 \definecolor{ITMOpink}{RGB}{251,118,251}
 
 \setbeamercolor{title}{fg=ITMOwhite}
@@ -51,7 +50,6 @@
 \setbeamercolor{section in toc}{fg=ITMOviolet}
 \setbeamercolor{subsection in toc}{fg=ITMOviolet}
 
-
 \setbeamertemplate{itemize item}[circle]
 \setbeamertemplate{itemize subitem}[circle]
 \setbeamertemplate{itemize subsubitem}[circle]
@@ -63,61 +61,55 @@
 \setbeamercolor{enumerate subsubitem}{fg=ITMOviolet}
 \setbeamercolor{item projected}{fg=ITMOviolet}
 
-
-
 \newcommand{\itmobackgroundsnakes}[1]{
-\usebackgroundtemplate%
-{%
+  \usebackgroundtemplate%
+  {%
     \includegraphics[width=\paperwidth,height=\paperheight]{itmo/vitmo_snakes.jpg}%
+  }
+  \tikz[remember picture,overlay] \node at (current page.center){
+    \includegraphics[height=\paperheight,width=\paperwidth]{itmo/vitmo_snakes.jpg}
+  };
+  \tikz \node at (current page.center){
+    \begin{minipage}[t][0.97\paperheight][c]{0.843\paperwidth}
+      \begin{center}
+        \usebeamercolor[fg]{title}{
+          #1
+        }
+      \end{center}
+    \end{minipage}
+  };
 }
-\tikz[remember picture,overlay] \node at (current page.center){
-	\includegraphics[height=\paperheight,width=\paperwidth]{itmo/vitmo_snakes.jpg}
-};
-\tikz \node at (current page.center){
-	\begin{minipage}[t][0.97\paperheight][c]{0.843\paperwidth}
-		\begin{center}
-			\usebeamercolor[fg]{title}{
-				#1
-			}
-		\end{center}
-	\end{minipage}
-};
-}
-
 
 \setbeamertemplate{title page}{
-	\itmobackgroundsnakes{
-	    \begin{center}
-	        \vfill
-			\empty
-			\vfill
-			\usebeamerfont{titlegraphic}{\inserttitlegraphic}
-    		\vfill
-    		\usebeamerfont{title}{  \inserttitle} 
-    		\vfill
-    		\usebeamerfont{subtitle}{\insertsubtitle}
-    		\vfill
-    		\insertauthor
-    		\vfill
-    		\insertinstitute
-    		\vfill
-    		\ifx\insertplace\empty
-    			\insertdate
-    		\else
-    			\insertplace,  \insertdate
-    		\fi
-		\end{center}
-	}
+  \itmobackgroundsnakes{
+    \begin{center}
+      \vfill
+      \empty
+      \vfill
+      \usebeamerfont{titlegraphic}{\inserttitlegraphic}
+      \vfill
+      \usebeamerfont{title}{  \inserttitle}
+      \vfill
+      \usebeamerfont{subtitle}{\insertsubtitle}
+      \vfill
+      \insertauthor
+      \vfill
+      \insertinstitute
+      \vfill
+      \ifx\insertplace\empty
+      \insertdate
+      \else
+      \insertplace,  \insertdate
+      \fi
+    \end{center}
+  }
 }
-
 
 \def \insertplace {}
 \newcommand{\where}[1]{ \def \insertplace {#1} }
 
-
 \def \insertfootlinetext {\inserttitle}
 \newcommand{\setfootlinetext}[1]{ \def \insertfootlinetext {#1} }
-
 
 \setbeamertemplate{navigation symbols}{}
 %\setbeamertemplate{footline}[page number]{}
@@ -126,8 +118,11 @@
 %\setbeamertemplate{footline}{{\begin{minipage}[c][0.04\textheight][c]{0.83\paperwidth}\hskip1em\insertfootlinetext\hfill\end{minipage}}\colorbox{ITMOviolet}{\begin{minipage}[c][0.04\textheight][c]{0.15\paperwidth}\begin{center}\small\color{ITMOwhite}\textbf{\insertframenumber/\inserttotalframenumber}\end{center}\end{minipage}}}
 %
 
-\setbeamertemplate{footline}{\hfill{\begin{minipage}[c][0.06\textheight][c]{0.1\paperwidth}\begin{center}\small\color{ITMOviolet}\textbf{\insertframenumber/\inserttotalframenumber}\end{center}\end{minipage}}}
-
+\setbeamertemplate{footline}{\hfill{
+    \begin{minipage}[c][0.06\textheight][c]{0.1\paperwidth}
+      \begin{center}\small\color{ITMOviolet}\textbf{\insertframenumber/\inserttotalframenumber}
+      \end{center}
+\end{minipage}}}
 
 \setbeamerfont{footline}{size=\footnotesize}
 \setbeamerfont{frametitle}{size=\bf\Large}
