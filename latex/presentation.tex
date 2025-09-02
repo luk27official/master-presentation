@@ -135,7 +135,7 @@
   \end{block}
 
   \begin{block}{Software (CryptoShow)}
-    Build a client–server web app to submit structures, run residue predictions, cluster them into sites, and visualize results. Additionally, provide animations using AHoJ\footnote{AHoJ is a tool developed at FMP CUNI for finding apo-holo protein pair analogs.}, an external database for protein conformational analysis.
+    Build a client–server web app to submit structures, run residue predictions, cluster them into sites, and visualize results. Additionally, provide animations using AHoJ\footnote{AHoJ is a tool developed at FMP CUNI for finding apo-holo protein pair analogs.}.
   \end{block}
 \end{frame}
 
@@ -160,13 +160,16 @@
     \begin{column}{0.5\textwidth}
       \textbf{Approach 1}
       \begin{itemize}
-        \item TODO
+        \item DBSCAN algorithm
+        \item Cluster residues within 5 \AA
+        \item Based purely on sequence information
       \end{itemize}
     \end{column}
     \begin{column}{0.5\textwidth}
       \textbf{Approach 2}
       \begin{itemize}
-        \item TODO
+        \item DBSCAN algorithm + smoothing model
+        \item Improve clustering by adding spatial information
       \end{itemize}
     \end{column}
   \end{columns}
